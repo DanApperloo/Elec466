@@ -1,0 +1,55 @@
+How to Simulate SystemC Code...
+To run SystemC you need to use one of the Linux machines in ELW B326: ugls1, ugls2, ..., ugls19.
+
+To simulate xor2, for example, follow the seven steps outlined below.
+
+1. Open a terminal window.
+
+2. Create a new directory xor2 and change to it:
+
+mkdir xor2
+cd xor2
+
+3. Put this Makefile into your xor2 directory.
+
+4. Put xor2's SystemC source files (on this website) into your xor2 directory.
+
+If you want to edit any of .h or .cpp files, type:
+
+gedit filename.h &
+or
+gedit filename.cpp &
+
+5. To compile SystemC files in your xor2 directory, type:
+
+make all
+
+6. To run SystemC executable code, called main.x, type:
+
+./main.x
+
+If you want to redirect the displayed output into a text file, type:
+
+./main.x > filename.txt
+
+7. To see simulation waveforms, type:
+
+gtkwave xor2_traces.vcd
+
+NOTE: When a waveform window comes up, it may show no signal waveforms. Click on "SystemC" to see the names of your traced signals. Then, select a signal whose wave you want to display and click on "Insert" button. Using "Edit -> Data Format" you can select how your signal is displayed (e.g., in binary, signed decimal, etc, if applicable).
+
+How to Submit Your Code
+Suppose you've been asked to submit your SystemC code for, say, Question 1 of Assignment 2. First, create a new directory for it, say, A2Q1. Then, create, compile, and simulate your design files in that directory. Don't forget to put this Makefile into A2Q1.
+
+After your files have been finalized, remove by-products of editing, compilation, and execution, which can be done by typing:
+
+make clean
+
+Next, compress your directory A2Q1 by typing:
+
+cd ..
+tar -zcvf YourName_A2Q1.tar.gz A2Q1
+
+NOTE: Your current directory (one level up from A2Q1) now contains the compressed file in question, e.g., JohnSmith_A2Q1.tar.gz.
+
+Email your compressed file to daler@ece.uvic.ca.
